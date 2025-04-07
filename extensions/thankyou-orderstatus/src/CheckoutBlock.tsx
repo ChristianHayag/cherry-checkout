@@ -10,6 +10,7 @@ import {
   Grid,
   GridItem,
   InlineStack,
+  // Block, (removed as it is not exported)
 } from "@shopify/ui-extensions-react/checkout";
 
 export default reactExtension("purchase.thank-you.block.render", () => (
@@ -46,37 +47,27 @@ function Extension() {
 
       <InlineStack spacing="loose">
         {products.map((product, index) => (
-          <BlockStack
-            key={index}
-            border="base"
-            cornerRadius="base"
-
-          >
-            <View maxInlineSize={175} >
-              <Image source={product.imageUrl}/>
+          <BlockStack key={index} border="base" cornerRadius="base">
+            <View maxInlineSize={175}>
+              <Image source={product.imageUrl} />
             </View>
-            <BlockStack
-              padding="base"
-            >
+            <BlockStack padding="base">
               <Text>{product.title}</Text>
               <Text appearance="subdued">Starts at {product.price}</Text>
               <Button
                 kind="primary"
                 accessibilityLabel={`Buy ${product.title}`}
-                onPress={() => window.location.href = `/products/${product.title.toLowerCase().replace(' ', '-')}`}
+                onPress={() => console.log(`Buying ${product.title}`)}
               >
                 Buy Now
               </Button>
             </BlockStack>
-            
           </BlockStack>
         ))}
       </InlineStack>
-      
     </BlockStack>
   );
 }
-
 
 function CartConfirmationMessage() {
   return (
@@ -84,7 +75,7 @@ function CartConfirmationMessage() {
       <View border="base" cornerRadius="small" padding="base" spacing="tight">
         <Heading level={2}>Your order is confirmed</Heading>
         <Text>
-          You'll get a confirmation email with your order number soon. 
+          You'll get a confirmation email with your order number soon.
         </Text>
         <Text>
           Rendered from the "Checkout.tsx" block extension.

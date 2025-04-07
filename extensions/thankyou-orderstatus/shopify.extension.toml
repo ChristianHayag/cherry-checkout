@@ -19,7 +19,16 @@ module = "./src/Checkout.tsx"
 target = "purchase.thank-you.block.render"
 
 [[extensions.targeting]]
-module = "./src/CartLineHeading.tsx"
+module = "./src/CartLineFooter.tsx"
+target = "purchase.thank-you.cart-line-list.render-after"
+
+[[extensions.targeting]]
+module = "./src/CheckoutBlock.tsx"
+target = "purchase.checkout.block.render"
+default_placement = "ORDER_SUMMARY4"
+
+[[extensions.targeting]]
+module = "./src/OrderStatusUpsell.tsx"
 target = "purchase.thank-you.customer-information.render-after"
 
 [extensions.capabilities]
