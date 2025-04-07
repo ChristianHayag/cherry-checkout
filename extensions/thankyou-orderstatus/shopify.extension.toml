@@ -6,10 +6,9 @@
 api_version = "2025-01"
 
 [[extensions]]
+type = "ui_extension"
 name = "thankyou-orderstatus"
 handle = "thankyou-orderstatus"
-type = "ui_extension"
-
 
 # Controls where in Shopify your extension will be injected,
 # and the file that contains your extension’s source code. Learn more:
@@ -18,6 +17,10 @@ type = "ui_extension"
 [[extensions.targeting]]
 module = "./src/Checkout.tsx"
 target = "purchase.thank-you.block.render"
+
+[[extensions.targeting]]
+module = "./src/CartLineHeading.tsx"
+target = "purchase.thank-you.customer-information.render-after"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
