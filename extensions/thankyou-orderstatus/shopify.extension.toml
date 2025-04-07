@@ -27,10 +27,6 @@ module = "./src/CheckoutBlock.tsx"
 target = "purchase.checkout.block.render"
 default_placement = "ORDER_SUMMARY4"
 
-[[extensions.targeting]]
-module = "./src/OrderStatusUpsell.tsx"
-target = "purchase.thank-you.customer-information.render-after"
-
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
