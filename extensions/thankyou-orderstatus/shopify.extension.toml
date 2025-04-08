@@ -7,30 +7,25 @@ api_version = "2025-01"
 
 [[extensions]]
 type = "ui_extension"
-name = "thankyou-orderstatus"
-handle = "thankyou-orderstatus"
-
-# Controls where in Shopify your extension will be injected,
-# and the file that contains your extension’s source code. Learn more:
-# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+name = "Upsell Block"
+handle = "upsell-block"
 
 [[extensions.targeting]]
 module = "./src/Checkout.tsx"
 target = "purchase.thank-you.block.render"
 
+[[extensions]]
+type = "ui_extension"
+name = "Text Block"
+handle = "text-block"
+
 [[extensions.targeting]]
 module = "./src/CartLineFooter.tsx"
-target = "purchase.thank-you.cart-line-list.render-after"
-
-[[extensions.targeting]]
-module = "./src/CheckoutBlock.tsx"
-target = "purchase.checkout.block.render"
-default_placement = "ORDER_SUMMARY4"
+target = "purchase.thank-you.block.render"
 
 [extensions.capabilities]
-# Gives your extension access to directly query Shopify’s storefront API.
-# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
 api_access = true
+
 
 # Gives your extension access to make external network calls, using the
 # JavaScript `fetch()` API. Learn more:

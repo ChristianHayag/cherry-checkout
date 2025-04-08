@@ -15,7 +15,6 @@ import {
 export default reactExtension("purchase.thank-you.block.render", () => (
   <BlockStack spacing="loose">
     <Extension />
-    <CartConfirmationMessage />
   </BlockStack>
 ));
 
@@ -72,24 +71,6 @@ function Extension() {
           </BlockStack>
         ))}
       </InlineStack>
-      
-    </BlockStack>
-  );
-}
-
-
-function CartConfirmationMessage() {
-  return (
-    <BlockStack spacing="loose">
-      <View border="base" cornerRadius="small" padding="base" spacing="tight">
-        <Heading level={2}>Your order is confirmed</Heading>
-        <Text>
-          You'll get a confirmation email with your order number soon. 
-        </Text>
-        <Text>
-          Rendered from the "Checkout.tsx" block extension.
-        </Text>
-      </View>
     </BlockStack>
   );
 }

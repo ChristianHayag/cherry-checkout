@@ -10,10 +10,9 @@ import {
   Grid,
   GridItem,
   InlineStack,
-  // Block, (removed as it is not exported)
 } from "@shopify/ui-extensions-react/checkout";
 
-export default reactExtension("purchase.thank-you.block.render", () => (
+export default reactExtension("purchase.checkout.block.render", () => (
   <BlockStack spacing="loose">
     <Extension />
     <CartConfirmationMessage />
